@@ -1,21 +1,27 @@
 // Require modules 
 const express = require('express');
+const morgan = require('morgan');
+const port = 3000;
+const indexRouter = require('./routes/index');
 
 // Create Express app
 const app = express();
 
-// Configure App (app.set)
+// Connect to DB 
+require('./config/database');
 
-// Use the ejs View engine 
+// Configure App (app.set)
 app.set('view engine', 'ejs')
 
+
 // Mount middleware 
+app.use(morgan('dev'));
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 
 
-// Mount Routes 
-app.get('/', function(req, res) {
-    res.render('index');
-});
+// Mount Routes with app.use()
+app.use('/', indexRouter);
 
 
 // tell the app tp listen on port 3000 
