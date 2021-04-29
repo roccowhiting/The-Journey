@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const port = 3000;
 const indexRouter = require('./routes/index');
+const clientsRouter = require('./routes/clients')
 
 // Create Express app
 const app = express();
@@ -22,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Mount Routes with app.use()
 app.use('/', indexRouter);
+app.use('/clients', clientsRouter);
 
 
 // tell the app tp listen on port 3000 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clients | Schedule a new Session</title>
+</head>
+<body>
+    <h1>Schedule here!</h1>
+    <form action="/clients" method="POST">
+        <label>Date:
+            <input type="text" name="date">
+        </label>
+        <label>Workout:
+            <input type="text" name="workOut">
+        </label>
+        <label>Trainer:
+            <select name="Trainer">
+                <option value="Power Lifting">Power Lifting</option>
+                <option value="Body Building">Body Building</option>
+                <option value="HIIT">HIIT</option>
+            </select>
+        </label>
+        <input type="submit" value="Schedule">
+    </form>
+</body>
+</html>
