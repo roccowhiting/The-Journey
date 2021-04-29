@@ -3,7 +3,8 @@ const express = require('express');
 const morgan = require('morgan');
 const port = 3000;
 const indexRouter = require('./routes/index');
-const clientsRouter = require('./routes/clients')
+const clientsRouter = require('./routes/clients');
+const methodOverRide = require('method-override');
 
 // Create Express app
 const app = express();
@@ -19,6 +20,8 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverRide('_method'));
+
 
 
 // Mount Routes with app.use()

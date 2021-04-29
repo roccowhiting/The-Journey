@@ -1,17 +1,29 @@
+const client = require('../models/client');
 const Client = require('../models/client');
 
 
 module.exports = {
     new: newClient,
     create,
-    index
+    index,
+    edit,
+    update,
+    delete: deleteClient
 };
+
+function index(req, res) {
+    Client.find({}, function(err, clients) {
+        res.render('clients/index', { clients });
+    });
+}
+
 
 function newClient(req, res) {
     res.render('clients/new');
 }
 
 function create(req, res) {
+    req.body.newSession = !!req.body.newSession;
    
     Client.create(req.body, function(err, client) {
         if(err) return res.redirect('/clients/new')
@@ -19,9 +31,34 @@ function create(req, res) {
     });
 }
 
+function edit(req, res) {
+    console.log(req.params.id, req.body, 'data passed to edit function');
+    Client.findById(req.params.id, function(err, client) {
+    res.render('clients/edit', {
+        client
+    });    
+})
+    
+}
 
-function index(req, res) {
-    Client.find({}, function(err, clients) {
-        res.render('clients/index', { clients });
-    });
+function update(req, res) {
+    // Client.findById(req.params.id, function(err, updated) {
+    //     console.log(updated, 'is updated');
+    //     updated.workout.push(req.body.workouts);
+    //     updated.save(function(){
+    //     res.redirect('/clients');   
+    //     });
+        
+    //});
+    console.log(req.params.id, req.body, 'data passed to update function');
+    Client.findByIdAndUpdate(req.params.id, {$set: {workout: req.body.workouts}}, {upsert: true}, function(err, updated) {
+        console.log(updated, 'up');
+        res.redirect('/clients');
+    })
+}
+
+function deleteClient(req, res) {
+    Client.findByIdAndDelete(req.params.id, function(err, deleted) {
+        res.redirect('/clients');
+    })
 }
