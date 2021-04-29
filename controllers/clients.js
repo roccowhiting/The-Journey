@@ -12,7 +12,11 @@ function newClient(req, res) {
 }
 
 function create(req, res) {
-    req.body.newSession = !!req.body.newSession;
+   
+    Client.create(req.body, function(err, client) {
+        if(err) return res.redirect('/clients/new')
+        res.redirect('/clients');
+    });
 }
 
 

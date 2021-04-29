@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workout Sessions!</title>
+</head>
+<body>
+    <h1>Appointments</h1>
+    <table>
+        <thead>
+            <th>Date</th>
+            <th>Workout</th>
+            <th>Trainer</th>
+        </thead>
+        <tbody>
+            <% clients.forEach(client => { %>
+                <tr>
+                    <td><%= client.date %></td>
+                    <td><%= client.workout %></td>
+                    <td><%= client.trainer %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

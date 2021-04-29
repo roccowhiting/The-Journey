@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const clientSchema = new Schema({
-    Date: Date,
-    Workout: Array,
-    Trainer: String,
-});
+const sessionSchema = new Schema({
+    date: Date,
+    workout: [String],
+    trainer: [String]
+}, { timestamps: true });
 
 // compile the schema into a model and export it 
-module.exports = mongoose.model('Client', clientSchema);
+module.exports = mongoose.model('Session', sessionSchema);
