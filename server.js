@@ -1,10 +1,14 @@
 // Require modules 
 const express = require('express');
 const morgan = require('morgan');
-const port = 3000;
+// const port = 3000;
 const indexRouter = require('./routes/index');
 const clientsRouter = require('./routes/clients');
 const methodOverRide = require('method-override');
+const port = process.env.PORT || '3000';
+
+// load the env vars 
+require('dotenv').config();
 
 // Create Express app
 const app = express();

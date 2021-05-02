@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb+srv://admin:taco4321@cluster0.2cwle.mongodb.net/The-Journey?retryWrites=true&w=majority';
+const connectionURI = process.env.DATABASE_URI;
 
 
-mongoose.connect(connectionString, {
+mongoose.connect(connectionURI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
@@ -14,4 +14,4 @@ const db = mongoose.connection; // shortcut variable
 
 db.on('connected', function() {
     console.log(`Connected to MongoDB on ${db.host}:${db.port}`);
-});
+}); 
