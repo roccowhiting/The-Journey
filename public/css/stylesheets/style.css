@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: helvetica;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header, footer {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+}
