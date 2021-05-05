@@ -1,5 +1,5 @@
 # The Jorney! 
-A web app that lets you veiw some of your favorite pokemon! 
+This is a simple app to help you Schedule a workout session with a personal trainer
 
 ## Technologies 
 - HTML5
@@ -7,12 +7,13 @@ A web app that lets you veiw some of your favorite pokemon!
 - CSS3
 - express
 - node.js
+- EJS 
 
 ## Wireframes/Screenshots
+![wireframe](AM.png)
 
-
-## Getting started 
-[Click Away]
+## Its one click away!
+[Click Away](https://fitness-jopurney-app.herokuapp.com/) to Start your Journey!
 
 ## Future Enhancements
 

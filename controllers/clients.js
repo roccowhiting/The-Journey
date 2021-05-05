@@ -42,14 +42,6 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-    // Client.findById(req.params.id, function(err, updated) {
-    //     console.log(updated, 'is updated');
-    //     updated.workout.push(req.body.workouts);
-    //     updated.save(function(){
-    //     res.redirect('/clients');   
-    //     });
-        
-    //});
     console.log(req.params.id, req.body, 'data passed to update function');
     Client.findByIdAndUpdate(req.params.id, {$set: {workout: req.body.workouts}}, {upsert: true}, function(err, updated) {
         console.log(updated, 'up');

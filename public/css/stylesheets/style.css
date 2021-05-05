@@ -22,7 +22,10 @@ header {
   box-shadow: 1px 1px 3px 2px gray;
 }
 
+label {
+  flex-direction: column;
+}
+
 footer {
   justify-content: center;
-  color: blue;
 }
