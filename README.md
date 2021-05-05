@@ -19,3 +19,5 @@ This is a simple app to help you Schedule a workout session with a personal trai
 
 - being able to speak 1:1 with an instructor via messenger
 - being able to post a review of your workout session and how your experience was with a vertain coach.
+- Make this app Better!!
+
