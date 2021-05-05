@@ -7,10 +7,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    color: white;
+    background-image: url("https://wallpapercave.com/wp/wp2613873.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
-
-header, footer {
+header,footer {
     display: flex;
     align-items: center;
     height: 3rem;
@@ -22,10 +25,11 @@ header {
   box-shadow: 1px 1px 3px 2px gray;
 }
 
+
 label {
   flex-direction: column;
 }
 
 footer {
-  justify-content: center;
+  justify-self: center;
 }

@@ -10,7 +10,7 @@ This is a simple app to help you Schedule a workout session with a personal trai
 - EJS 
 
 ## Wireframes/Screenshots
-![wireframe](AM.png)
+![wireframe](PM.png)
 
 ## Its one click away!
 [Click Away](https://fitness-jopurney-app.herokuapp.com/) to Start your Journey!
