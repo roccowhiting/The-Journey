@@ -19,6 +19,7 @@
         </tr>
         </thead>
         <tbody>
+            <% if(clients && clients.length ) { %>
             <% clients.forEach(client => { %>
                 <tr>
                     <td><%= client.appt %></td>
@@ -35,6 +36,7 @@
                    
                 </tr>
             <% }); %>
+            <% } %>
         </tbody>
     </table>
  <a href="/"><button> Home </button></a>
