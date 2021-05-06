@@ -21,7 +21,7 @@
         <tbody>
             <% clients.forEach(client => { %>
                 <tr>
-                    <td><%= client.date %></td>
+                    <td><%= client.appt %></td>
                     <td><%= client.workout %></td>
                     <td><%= client.trainer %></td>
                     <td>
@@ -31,11 +31,13 @@
                         <form action="/clients/<%= client._id %>?_method=DELETE" method="POST">
                         <input type="submit" value="delete">
                         </form>
-                    </td>
+                    </td>    
+                   
                 </tr>
             <% }); %>
         </tbody>
     </table>
+ <a href="/"><button> Home </button></a>
 <footer>
     <p>All Rights Reserved Copyright &copy; 2021</p>
 </footer>

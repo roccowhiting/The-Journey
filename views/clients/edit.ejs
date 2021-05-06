@@ -11,12 +11,10 @@
 <body>
     <h1>Edit</h1>
     <form action="/clients/<%= client._id %>?_method=PUT" method="POST">
-        <input type="text" name="workouts" value="<%= client.workout %>">
-        </form>
-<form action="/clients" method="POST">
+        <input type="text" name="workout" value="<%= client.workout %>">
         <label>Date:
             <input type="datetime-local"  id="session-time" 
-            name="workouts" value="2022-01-01T12:30"
+            name="appt" value="2022-01-01T12:30"
             min="2022-01-01T12:01">
         </label>
         <label>Trainer:
@@ -28,6 +26,9 @@
         </label>
         <input type="submit" value="Submit">
     </form>
+    <a href="/clients"><button> Home </button></a>
+
+        
 
 <footer>
     <p>All Rights Reserved Copyright &copy; 2021</p>

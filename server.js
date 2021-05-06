@@ -1,7 +1,6 @@
 // Require modules 
 const express = require('express');
 const morgan = require('morgan');
-// const port = 3000;
 const indexRouter = require('./routes/index');
 const clientsRouter = require('./routes/clients');
 const methodOverRide = require('method-override');

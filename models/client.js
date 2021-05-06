@@ -4,9 +4,10 @@ const Schema = mongoose.Schema;
 
 
 const sessionSchema = new Schema({
-    date: Date,
+    
     workout: String,
-    trainer: String
+    trainer: String,
+    appt: Date
 }, { timestamps: true });
 
 // compile the schema into a model and export it 

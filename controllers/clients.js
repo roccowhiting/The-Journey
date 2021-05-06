@@ -1,4 +1,3 @@
-const client = require('../models/client');
 const Client = require('../models/client');
 
 
@@ -24,9 +23,9 @@ function newClient(req, res) {
 
 function create(req, res) {
     req.body.newSession = !!req.body.newSession;
-   
+   console.log(req.body);
     Client.create(req.body, function(err, client) {
-        if(err) return res.redirect('/clients/new')
+        if(err) console.log(err);
         res.redirect('/clients');
     });
 }
@@ -43,7 +42,7 @@ function edit(req, res) {
 
 function update(req, res) {
     console.log(req.params.id, req.body, 'data passed to update function');
-    Client.findByIdAndUpdate(req.params.id, {$set: {workout: req.body.workouts}}, {upsert: true}, function(err, updated) {
+    Client.findByIdAndUpdate(req.params.id, req.body, function(err, updated) {
         console.log(updated, 'up');
         res.redirect('/clients');
     })
